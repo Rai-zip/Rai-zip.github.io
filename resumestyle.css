@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(21, 21, 21); 
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url(fonts/bebas-neue/BebasNeue-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(fonts/lato/Lato-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoB';
+    src: url(fonts/lato/Lato-Bold.ttf) format('truetype');
+}
+
+.navbar {
+    background-color: #1f1f1e;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 45px;
+    font-weight: 600;
+    color: #dacba7; 
+    margin-left: 25px;
+    font-family: 'Bebas';
+}
+
+.logo a:hover {
+    color: grey;
+}
+
+.navdiv-ul li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+.navdiv-ul li a {
+    color: #dacba7;
+    font-size: 23px;
+    font-weight: bold;
+    margin-right: 25px;
+    font-family: 'Bebas';
+    margin-top: 5px;
+}
+
+.navdiv-ul li a:hover {
+    color: #56564c;
+}
+
+.navdiv-ul li a.active,
+.navdiv-ul li a:hover {
+    color: #56564c;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bar{
+    display: block; 
+    width: 25px; 
+    height: 3px; 
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+@media(max-width:768px) {
+    .hamburger{
+        display:block; 
+    }
+    .hamburger.active .bar:nth-child(2){
+        transform: translate(0px) rotate(90deg);
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translate(8px) rotate(90deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translate(-8px) rotate(90deg);
+    }
+    .navdiv-ul{
+        position: fixed; 
+        left: -100%; 
+        top: 70px; 
+        gap: 0; 
+        background-color: #1f1f1e;
+        width: 100%;
+        text-align: center;
+        transition: 0.6s;
+    }
+
+
+    .navdiv-ul li {
+        padding: 16px 0;
+    }
+    .navdiv-ul.active{
+        left: 0; 
+    }
+}
+
+
+
+.box {
+    color: white;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    width: 90%;
+    height: 2000px;
+
+    background-image: url('./images/finalbgg.jpeg');
+    background-size: cover; /* Adjust as needed, e.g., 'contain' */
+    background-position: center; /* Adjust as needed */
+    background-repeat: no-repeat;
+}
+
+.resume-header {
+    padding-top: 30px;
+    margin-bottom: 1px;
+    margin-left: 30px; 
+    border-radius: 10px;
+    color: whitesmoke;
+    font-family: 'Bebas';
+    font-size: 4rem;
+}
+
+.resume-address {
+    color: whitesmoke;
+    font-family: 'Bebas';
+    font-size: 1.4rem;
+    text-align: right;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+.wrapper{
+    display: flex; 
+    flex-flow: row wrap; 
+    font-family: 'Lato';
+}
+
+.wrapper > * {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%; 
+    border-radius: 10px; 
+}
+
+.header{
+    background: rgb(68, 68, 68); 
+    padding-top: 20px;
+    height: 600px;
+    opacity: 93%;
+}
+
+.footer{
+    text-decoration: none;
+    background: rgb(68, 68, 68); 
+    opacity: 93%;
+    height: 430px;
+    padding-top: 20px;
+}
+
+.main{
+    text-align: left;
+    background: rgb(68, 68, 68); 
+    opacity: 93%;
+    height: 430px;
+    padding-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.aside1{
+    background: rgb(68, 68, 68); 
+    opacity: 93%;
+    padding-top: 20px;
+}
+
+.aside2{
+    background: rgb(68, 68, 68); 
+    opacity: 93%;
+    padding-top: 20px;
+}
+
+.header ul {
+    margin-left: 50px;
+}
+
+.header h1,h2{
+    margin-left: 20px;
+}
+
+.header p {
+    margin-left: 25px; 
+}
+
+.aside1 h1,h2{
+    margin-left: 20px;
+}
+
+.aside1 p {
+    margin-left: 25px; 
+}
+
+.aside2 h1,h2{
+    margin-left: 20px;
+}
+
+.aside2 p {
+    margin-left: 25px; 
+}
+
+.aside2 ul{
+    margin-left: 40px;
+}
+.main ul{
+    margin-left: 50px; 
+}
+
+.main p{
+    margin-left: 20px; 
+}
+
+.main h1,h2{
+    margin-left: 20px;
+}
+
+.footer p , h1 {
+    margin-left: 20px;
+}
+
+.footer ul{
+    margin-left: 40px;
+}
+
+.footer a{
+    color: rgb(121, 152, 209);
+}
+
+.final {
+    padding-top: 60px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fancy-button {
+    display: inline-block;
+    font-size: 5px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    font-family: 'bebas';
+    cursor: pointer;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: rgb(68, 68, 68);
+    opacity: 93%;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 10px 10px 10px;
+    font-size: 280%;
+}
+
+.fancy-button:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+
+@media all and (min-width: 800px){
+    .main{
+        flex: 3; 
+    }
+    .aside1{
+        order:1; 
+    }
+    .aside2{
+        order:2; 
+    }
+    .main{
+        order: 2; 
+    }
+    .footer{
+        order: 4; 
+    }
+}
+
+@media all and (min-width: 600px){
+    .aside{
+        flex: 1; 
+    }
+}
+
+@media (max-width: 1270px) {
+    .main {
+        height: 500px; 
+    }
+}
+
+@media (max-width: 1100px) {
+    .header {
+        height: 700px; 
+    }
+    .footer {
+        height: 500px;
+    }
+}
+
+@media (max-width: 944px) {
+    .main {
+        height: 600px; 
+    }
+}
+
+
+
+@media (max-width: 646px) {
+    .header {
+        height: 750px; 
+    }
+    .footer {
+        height: 530px;
+    }
+}
+
+@media (max-width: 554px) {
+    .header {
+        height: 800px; 
+    }
+    .footer {
+        height: 580px;
+    }
+}
+
+@media (max-width: 506px) {
+    .header {
+        height: 830px; 
+    }
+    .footer {
+        height: 650px;
+    }
+}
+
+@media (max-width: 470px) {
+    .header {
+        height: 850px; 
+    }
+    .footer {
+        height: 700px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

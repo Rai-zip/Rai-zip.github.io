@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+@font-face{
+    font-family: 'Lora';
+    src: url(fonts/Lora-VariableFont_wght.woff) format('woff'); 
+}
+
+@font-face{
+    font-family: 'Bebas';
+    src: url(fonts/bebas-neue/BebasNeue-Regular.woff) format('woff'); 
+}
+
+@font-face{
+    font-family: 'husar';
+    src: url(fonts/hussar-bold-web-edition-font/misc/HussarBoldWeb-bf92.woff) format('woff'); 
+}
+
+@font-face{
+    font-family: 'darling';
+    src: url(fonts/DarlingtonDemo-z8xjG.woff) format('woff'); 
+}
+
+
+.navbar{
+    background-color: #1f1f1e;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+.navdiv{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.logo a{
+    font-size: 45px; 
+    font-weight: 600;
+     color: #dacba7; 
+     margin-left: 25px;
+     font-family: 'Bebas';
+}
+
+.logo a:hover{
+    color: grey; 
+}
+
+.navdiv-ul li{
+    list-style: none; 
+    display: inline-block; 
+    text-align: center;
+    position: relative;
+}
+.navdiv-ul li a{
+ color: #dacba7; 
+ font-size: 23px; 
+ font-weight: bold; 
+ margin-right: 25px;
+ font-family: 'Bebas';
+ margin-top: 5px;
+}
+
+.navdiv-ul li a:hover{
+    color: #56564c;
+}
+
+.navdiv-ul li a.active{
+    color: #56564c;
+}
+
+/* Styling for the dropdown */
+.dropdown {
+    width: 100%;
+    background: #1f1f1e;
+    position: absolute;
+    z-index: 25;
+    opacity: 0;
+    transition: opacity 0.7s; /* Smooth transition effect */
+    top: 145%;
+    left: 0%;
+}
+
+/* Display the dropdown when hovering over the parent */
+.navdiv-ul  li:hover .dropdown {
+    opacity: 1;
+}
+
+/* Style for the list items within the dropdown */
+.dropdown li {
+    display: block;
+    padding-top: 5px;
+    /* Add additional styles as needed */
+}
+
+/* Style for the main navigation links */
+.navdiv-ul li a {
+    color: #dacba7;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 25px;
+    font-family: 'Bebas';
+    text-decoration: none; /* Ensure that links have no underline */
+}
+
+/* Style for the active state and hover state of the main navigation links */
+.navdiv-ul li a.active,.navdiv-ul li a:hover {
+    color: #56564c;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bar{
+    display: block; 
+    width: 25px; 
+    height: 3px; 
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+@media(max-width:800px) {
+    .hamburger{
+        display:block; 
+    }
+    .hamburger.active .bar:nth-child(2){
+        transform: translate(0px) rotate(90deg);
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translate(8px) rotate(90deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translate(-8px) rotate(90deg);
+    }
+    .navdiv-ul{
+        position: fixed; 
+        left: -100%; 
+        top: 70px; 
+        gap: 0; 
+        background-color: #1f1f1e;
+        width: 100%;
+        text-align: center;
+        transition: 0.6s;
+    }
+
+
+    .navdiv-ul li {
+        padding: 16px 0;
+    }
+    .navdiv-ul.active{
+        left: 0; 
+    }
+}
+
+
+/* main coding for the sliders */ 
+
+body {
+    background-image: url("./images/background.JPG");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    margin-top: 10px;
+}
+main{
+    width: 306px;
+    height: 544px; 
+    box-shadow: 0px 0px 3px grey;
+    margin: auto;
+    margin-top: 135px;
+    margin-bottom:0;
+    border-radius: 6px;
+    position: relative; 
+    overflow: hidden;
+}
+
+.slide{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: 0.6s; 
+}
+
+.nav{
+    text-align: center;
+    margin-top: 15px;
+    padding-bottom: 40px;
+}
+
+.nav button{
+    font-size: 25px;
+    padding: 5px;
+    font-family: 'bebas';
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+
+footer{
+    background-color: #24262b;
+    margin: 0;
+    padding: 70px 0; 
+    box-sizing: border-box; 
+}
+
+footer li{
+    list-style: none;
+    display: block; 
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row{
+    display:flex;
+    flex-wrap:nowrap; 
+    justify-content: center;
+}
+
+.footer-col{
+    width:25%; 
+    padding: 0 10px ;
+}
+
+.footer-col h4{
+font-size: 40px;
+font-family: 'bebas';
+color: #dacba7; 
+text-transform: capitalize;
+margin-bottom: 30px;
+font-weight: 500;
+position: relative;
+}
+
+.footer-col h4::before{
+    content:'';
+    position: absolute;
+    left: 0; 
+    bottom: -10px; 
+    background-color: #ffffff;
+    height: 2px; 
+    box-sizing: border-box; 
+    width: 50px; 
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+
+.footer-col ul li a {
+font-family: 'bebas';
+color: #ffffff; 
+text-transform: capitalize;
+text-decoration: none;
+font-weight: 300;
+color: #bbbbbb;
+display: block; 
+transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: grey;
+    transform: translateY(-5px); 
+}
+
+.footer p{
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'bebas';
+    font-size: 20px;
+    color: #ffffff;
+}
+
+
+
